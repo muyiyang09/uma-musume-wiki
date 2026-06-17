@@ -1,0 +1,80 @@
+2:I[2972,["972","static/chunks/972-98601070e4532626.js","930","static/chunks/app/guide/%5Bslug%5D/page-273b4e866a2287c5.js"],""]
+4:I[4707,[],""]
+6:I[6423,[],""]
+7:I[4196,["972","static/chunks/972-98601070e4532626.js","185","static/chunks/app/layout-88b4ad1c1523f437.js"],"default"]
+3:T1682,<h2 class="text-2xl font-bold mt-10 mb-4 pb-2 border-b border-border text-white">欢迎来到赛马娘的世界</h2>
+
+<strong class="text-white font-semibold">赛马娘 Pretty Derby（ウマ娘 プリティーダービー）</strong>是 Cygames 开发的一款养成模拟类手游。你将扮演训练员，培养赛马娘参加比赛，目标是拿下各种 G1 赛事冠军。
+
+<hr class="my-8 border-border"/>
+
+<h2 class="text-2xl font-bold mt-10 mb-4 pb-2 border-b border-border text-white">基础概念速览</h2>
+
+<tr><td class="p-3 border-b border-border text-sm ">概念</td><td class="p-3 border-b border-border text-sm ">说明</td></tr>
+
+<tr><td class="p-3 border-b border-border text-sm "><strong class="text-white font-semibold">育成</strong></td><td class="p-3 border-b border-border text-sm ">一次完整的培养周期，约 30~78 回合，每回合可选择训练/休息/比赛</td></tr>
+<tr><td class="p-3 border-b border-border text-sm "><strong class="text-white font-semibold">因子</strong></td><td class="p-3 border-b border-border text-sm ">育成结束后继承的属性/技能/适性加成，是长期养成核心</td></tr>
+<tr><td class="p-3 border-b border-border text-sm "><strong class="text-white font-semibold">支援卡</strong></td><td class="p-3 border-b border-border text-sm ">6 张编入卡组，决定训练效果和可获取技能</td></tr>
+<tr><td class="p-3 border-b border-border text-sm "><strong class="text-white font-semibold">适性</strong></td><td class="p-3 border-b border-border text-sm ">场地(芝/ダート) × 距离(短/マイル/中/长) × 跑法(逃/先/差/追)</td></tr>
+<tr><td class="p-3 border-b border-border text-sm "><strong class="text-white font-semibold">URA / 青春杯 / 巅峰杯 / 大师杯</strong></td><td class="p-3 border-b border-border text-sm ">不同育成剧本，各有独特机制</td></tr>
+
+<hr class="my-8 border-border"/>
+
+<h2 class="text-2xl font-bold mt-10 mb-4 pb-2 border-b border-border text-white">首次育成流程</h2>
+
+<h3 class="text-xl font-semibold mt-8 mb-3 text-primary-light">第一步：选择育成赛马娘</h3>
+
+<p class="mb-4 text-gray-300">新手推荐优先级：</p>
+<li class="text-gray-300 ml-5 list-decimal"><strong class="text-white font-semibold">特别周</strong>（先行/中距离，属性均衡，固有好触发）</li>
+<li class="text-gray-300 ml-5 list-decimal"><strong class="text-white font-semibold">无声铃鹿</strong>（逃げ/中距离，速度极高，容易理解）</li>
+<li class="text-gray-300 ml-5 list-decimal"><strong class="text-white font-semibold">东海帝王</strong>（先行/差し/中距离，固有强力）</li>
+
+<blockquote class="border-l-4 border-primary/50 pl-4 py-2 my-4 bg-bg-alt rounded-r-lg text-dim italic">💡 <strong class="text-white font-semibold">新手避坑</strong>：不要一上来就养长距离马（如目白麦昆），长距离对耐力和配卡要求高，容易育成失败。</blockquote>
+
+<h3 class="text-xl font-semibold mt-8 mb-3 text-primary-light">第二步：编成支援卡</h3>
+
+<p class="mb-4 text-gray-300">初期没有 SSR 的话，用系统送的 SSR 和 SR 过渡。核心原则：</p>
+<ul class="mb-4 space-y-1"><li class="text-gray-300 ml-5 list-disc">$2</li>
+<li class="text-gray-300 ml-5 list-disc">$2</li>
+<li class="text-gray-300 ml-5 list-disc">$2</li>
+<li class="text-gray-300 ml-5 list-disc">$2</li>
+</ul>
+<h3 class="text-xl font-semibold mt-8 mb-3 text-primary-light">第三步：育成中关键决策</h3>
+
+<strong class="text-white font-semibold">训练优先级</strong>：
+<p class="mb-4 text-gray-300">``<code class="bg-bg-alt px-1.5 py-0.5 rounded text-primary text-sm"></p>
+<p class="mb-4 text-gray-300">速度训练 > 力量训练 > 耐力训练（根据目标赛事调整）</p>
+<p class="mb-4 text-gray-300"></code>``</p>
+
+<strong class="text-white font-semibold">比赛选择</strong>：
+<ul class="mb-4 space-y-1"><li class="text-gray-300 ml-5 list-disc">$2</li>
+<li class="text-gray-300 ml-5 list-disc">$2</li>
+<li class="text-gray-300 ml-5 list-disc">$2</li>
+</ul>
+<strong class="text-white font-semibold">体力管理</strong>：
+<ul class="mb-4 space-y-1"><li class="text-gray-300 ml-5 list-disc">$2</li>
+<li class="text-gray-300 ml-5 list-disc">$2</li>
+<li class="text-gray-300 ml-5 list-disc">$2</li>
+</ul>
+<hr class="my-8 border-border"/>
+
+<h2 class="text-2xl font-bold mt-10 mb-4 pb-2 border-b border-border text-white">新手常见问题</h2>
+
+<tr><td class="p-3 border-b border-border text-sm ">问题</td><td class="p-3 border-b border-border text-sm ">答案</td></tr>
+
+<tr><td class="p-3 border-b border-border text-sm ">为什么我的马总是输？</td><td class="p-3 border-b border-border text-sm ">检查适性是否匹配赛事要求，属性是否达标</td></tr>
+<tr><td class="p-3 border-b border-border text-sm ">SSR 支援卡重要吗？</td><td class="p-3 border-b border-border text-sm ">重要但非必须，配卡逻辑比单卡强度重要</td></tr>
+<tr><td class="p-3 border-b border-border text-sm ">因子怎么刷？</td><td class="p-3 border-b border-border text-sm ">反复育成同一匹马，利用继承系统</td></tr>
+<tr><td class="p-3 border-b border-border text-sm ">体力不够怎么办？</td><td class="p-3 border-b border-border text-sm ">带友人卡、合理安排休息、利用事件回复</td></tr>
+
+<hr class="my-8 border-border"/>
+
+<h2 class="text-2xl font-bold mt-10 mb-4 pb-2 border-b border-border text-white">下一步</h2>
+
+<p class="mb-4 text-gray-300">完成首次 URA 夺冠后，建议阅读：</p>
+<ul class="mb-4 space-y-1"><li class="text-gray-300 ml-5 list-disc">$2</li>
+<li class="text-gray-300 ml-5 list-disc">$2</li>
+<li class="text-gray-300 ml-5 list-disc">$2</li></ul>5:["slug","beginner-guide","d"]
+0:["ZpLGoOY7YIekrwWn83L7l",[[["",{"children":["guide",{"children":[["slug","beginner-guide","d"],{"children":["__PAGE__?{\"slug\":\"beginner-guide\"}",{}]}]}]},"$undefined","$undefined",true],["",{"children":["guide",{"children":[["slug","beginner-guide","d"],{"children":["__PAGE__",{},[["$L1",["$","article",null,{"className":"container-main py-8 max-w-3xl","children":[["$","nav",null,{"className":"flex gap-2 text-sm text-dim mb-6","children":[["$","$L2",null,{"href":"/","className":"hover:text-primary","children":"首页"}],["$","span",null,{"children":"/"}],["$","$L2",null,{"href":"/","className":"hover:text-primary","children":"攻略"}],["$","span",null,{"children":"/"}],["$","span",null,{"className":"text-gray-300","children":"赛马娘新手入门完全攻略"}]]}],["$","header",null,{"className":"mb-8","children":[["$","div",null,{"className":"flex flex-wrap gap-2 mb-3","children":[["$","span",null,{"className":"tag","children":"入门"}],"$undefined",[["$","span","新手",{"className":"tag","children":"新手"}],["$","span","入门",{"className":"tag","children":"入门"}],["$","span","育成基础",{"className":"tag","children":"育成基础"}]]]}],["$","h1",null,{"className":"text-3xl md:text-4xl font-extrabold mb-3","children":"赛马娘新手入门完全攻略"}],["$","p",null,{"className":"text-dim text-lg mb-4","children":"从下载到首次育成，手把手教你入门赛马娘。包含基础概念、育成流程、资源规划。"}],["$","div",null,{"className":"flex items-center gap-4 text-sm text-dim","children":[["$","span",null,{"children":"攻略组"}],["$","span",null,{"children":["更新于 ","2026-06-15"]}]]}]]}],["$","div",null,{"className":"prose-guide","dangerouslySetInnerHTML":{"__html":"$3"}}],["$","footer",null,{"className":"mt-16 pt-8 border-t border-border","children":[["$","h3",null,{"className":"text-lg font-bold mb-4","children":"相关攻略"}],["$","div",null,{"className":"grid sm:grid-cols-2 gap-3","children":[["$","$L2","tier-list",{"href":"/guide/tier-list","className":"card p-4 group","children":[["$","span",null,{"className":"tag text-xs mb-2","children":"排行"}],["$","h4",null,{"className":"text-sm font-semibold group-hover:text-primary transition-colors","children":"SSR 支援卡强度榜（2026年6月最新）"}]]}],["$","$L2","training-guide",{"href":"/guide/training-guide","className":"card p-4 group","children":[["$","span",null,{"className":"tag text-xs mb-2","children":"育成"}],["$","h4",null,{"className":"text-sm font-semibold group-hover:text-primary transition-colors","children":"URA 育成系统深度解析"}]]}],["$","$L2","support-card-guide",{"href":"/guide/support-card-guide","className":"card p-4 group","children":[["$","span",null,{"className":"tag text-xs mb-2","children":"进阶"}],["$","h4",null,{"className":"text-sm font-semibold group-hover:text-primary transition-colors","children":"支援卡配卡思路与编成逻辑"}]]}],["$","$L2","inheritance-guide",{"href":"/guide/inheritance-guide","className":"card p-4 group","children":[["$","span",null,{"className":"tag text-xs mb-2","children":"进阶"}],["$","h4",null,{"className":"text-sm font-semibold group-hover:text-primary transition-colors","children":"因子继承机制全解"}]]}]]}]]}]]}],null],null],null]},[null,["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children","guide","children","$5","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children","guide","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/0aa1adcd944f6ddc.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"zh-CN","children":["$","body",null,{"className":"min-h-screen flex flex-col","children":[["$","$L7",null,{}],["$","main",null,{"className":"flex-1","children":["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}],["$","footer",null,{"className":"border-t border-border bg-bg-alt mt-16","children":["$","div",null,{"className":"container-main py-8","children":[["$","div",null,{"className":"grid grid-cols-2 sm:grid-cols-3 gap-8 mb-8","children":[["$","div",null,{"children":[["$","h4",null,{"className":"text-sm font-semibold mb-3","children":"UmaTrainer"}],["$","p",null,{"className":"text-xs text-dim leading-relaxed","children":["赛马娘 Pretty Derby",["$","br",null,{}],"中文育成攻略 Wiki"]}],["$","p",null,{"className":"text-xs text-dim mt-2","children":"非官方玩家社区项目"}]]}],["$","div",null,{"children":[["$","h4",null,{"className":"text-sm font-semibold mb-3","children":"快捷导航"}],["$","div",null,{"className":"flex flex-col gap-2 text-xs","children":[["$","$L2",null,{"href":"/guide/beginner-guide","className":"text-dim hover:text-primary transition-colors","children":"新手上路"}],["$","$L2",null,{"href":"/guide/tier-list","className":"text-dim hover:text-primary transition-colors","children":"Tier 排行"}],["$","$L2",null,{"href":"/guide/training-guide","className":"text-dim hover:text-primary transition-colors","children":"育成攻略"}]]}]]}],["$","div",null,{"children":[["$","h4",null,{"className":"text-sm font-semibold mb-3","children":"数据参考"}],["$","div",null,{"className":"flex flex-col gap-2 text-xs","children":[["$","a",null,{"href":"https://gamewith.jp/uma-musume/","target":"_blank","rel":"noopener","className":"text-dim hover:text-primary transition-colors","children":"GameWith"}],["$","a",null,{"href":"https://kamigame.jp/umamusume/","target":"_blank","rel":"noopener","className":"text-dim hover:text-primary transition-colors","children":"Kamigame"}],["$","a",null,{"href":"https://bbs.nga.cn/thread.php?fid=-34644324","target":"_blank","rel":"noopener","className":"text-dim hover:text-primary transition-colors","children":"NGA论坛"}]]}]]}]]}],["$","div",null,{"className":"border-t border-border pt-6 text-center text-xs text-dim","children":["$","p",null,{"children":"本网站与 Cygames 无关联。游戏内图像与名称归 Cygames 所有。"}]}]]}]}]]}]}]],null],null],["$L8",null]]]]
+8:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"UmaTrainer - 赛马娘攻略 Wiki"}],["$","meta","3",{"name":"description","content":"最全面的赛马娘育成攻略、支援卡推荐、角色图鉴、大赛资讯。图文攻略 + 配卡方案，助你快速养成最强赛马娘。"}],["$","meta","4",{"name":"keywords","content":"赛马娘,攻略,育成,支援卡,配卡,因子,Tier排行,ウマ娘"}],["$","meta","5",{"name":"robots","content":"index, follow"}],["$","meta","6",{"property":"og:title","content":"UmaTrainer - 赛马娘攻略 Wiki"}],["$","meta","7",{"property":"og:description","content":"最全面的赛马娘育成攻略、支援卡推荐、角色图鉴"}],["$","meta","8",{"property":"og:locale","content":"zh_CN"}],["$","meta","9",{"property":"og:type","content":"website"}],["$","meta","10",{"name":"twitter:card","content":"summary"}],["$","meta","11",{"name":"twitter:title","content":"UmaTrainer - 赛马娘攻略 Wiki"}],["$","meta","12",{"name":"twitter:description","content":"最全面的赛马娘育成攻略、支援卡推荐、角色图鉴"}]]
+1:null
