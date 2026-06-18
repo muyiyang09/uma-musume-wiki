@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-bg text-gray-100 font-sans antialiased;
+  }
+  ::selection { @apply bg-primary/40; }
+}
+
+@layer components {
+  .container-main { @apply max-w-6xl mx-auto px-4 sm:px-6; }
+  
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-full
+           bg-primary text-white font-semibold text-sm
+           hover:bg-primary-dark transition-all duration-200
+           hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/25;
+  }
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-full
+           border-2 border-primary text-primary font-semibold text-sm
+           hover:bg-primary hover:text-white transition-all duration-200
+           hover:-translate-y-0.5;
+  }
+
+  .card {
+    @apply bg-bg-card border border-border rounded-xl
+           hover:border-primary/40 hover:-translate-y-1
+           hover:shadow-xl hover:shadow-primary/5
+           transition-all duration-300;
+  }
+
+  .tag {
+    @apply inline-block px-3 py-1 rounded-full text-xs font-medium
+           bg-primary/10 text-primary;
+  }
+
+  .tier-badge {
+    @apply inline-flex items-center justify-center w-8 h-8 rounded-md text-sm font-extrabold text-white;
+  }
+  .tier-ss { @apply bg-tier-ss; }
+  .tier-s { @apply bg-tier-s; }
+  .tier-a { @apply bg-tier-a text-gray-900; }
+  .tier-b { @apply bg-tier-b; }
+
+  /* 攻略正文样式 */
+  .prose-guide {
+    @apply text-gray-200 leading-relaxed;
+  }
+  .prose-guide h2 {
+    @apply text-2xl font-bold mt-10 mb-4 pb-2 border-b border-border text-white;
+  }
+  .prose-guide h3 {
+    @apply text-xl font-semibold mt-8 mb-3 text-primary-light;
+  }
+  .prose-guide p {
+    @apply mb-4 text-gray-300;
+  }
+  .prose-guide ul, .prose-guide ol {
+    @apply mb-4 pl-6 space-y-1;
+  }
+  .prose-guide li { @apply text-gray-300; }
+  .prose-guide strong { @apply text-white font-semibold; }
+  .prose-guide table {
+    @apply w-full mb-6 border-collapse;
+  }
+  .prose-guide th {
+    @apply text-left p-3 bg-bg-alt border-b-2 border-border text-dim text-sm font-semibold;
+  }
+  .prose-guide td {
+    @apply p-3 border-b border-border text-sm;
+  }
+  .prose-guide blockquote {
+    @apply border-l-4 border-primary/50 pl-4 py-2 my-4 bg-bg-alt rounded-r-lg text-dim italic;
+  }
+  .prose-guide code {
+    @apply bg-bg-alt px-2 py-0.5 rounded text-primary text-sm;
+  }
+}
+
+/* 滚动条 */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0b0b1a; }
+::-webkit-scrollbar-thumb { background: #333355; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #444477; }
