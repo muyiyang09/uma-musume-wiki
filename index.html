@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UmaTrainer | 赛马娘育成攻略</title>
+<style>
+:root {
+  --pink: #ff6b9d; --pink-dark: #e05582; --purple: #7c5cfc;
+  --bg: #0b0b1a; --card: #15152a; --card2: #1a1a32;
+  --text: #e8e8f0; --dim: #7777a0; --border: #222244;
+  --gold: #ffd700; --ss: #ff3b3b; --s: #ff8800;
+  --a: #ffcc00; --b: #44cc44; --c: #4488ff;
+  --r: 10px; --r2: 6px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--pink);text-decoration:none}
+
+/* Header */
+.hdr{position:sticky;top:0;z-index:100;background:rgba(11,11,26,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 20px}
+.hdr-in{max-width:1100px;margin:0 auto;display:flex;align-items:center;height:56px;gap:20px}
+.logo{font-size:22px;font-weight:800;color:var(--pink);white-space:nowrap}
+.logo span{color:var(--text)}
+.search-wrap{flex:1;max-width:420px;position:relative}
+.search-wrap input{width:100%;padding:9px 44px 9px 16px;border-radius:22px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:14px;outline:none;transition:border .2s}
+.search-wrap input:focus{border-color:var(--pink)}
+.search-wrap .s-icon{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--dim);font-size:16px;cursor:pointer}
+
+/* Hero */
+.hero{max-width:1100px;margin:24px auto;padding:32px 24px;background:linear-gradient(135deg,var(--card) 0%,#1a1035 50%,var(--card) 100%);border-radius:var(--r);border:1px solid var(--border);text-align:center}
+.hero h1{font-size:36px;font-weight:800;margin-bottom:6px}
+.hero p{color:var(--dim);font-size:15px;margin-bottom:20px}
+.quick-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.qbtn{padding:8px 20px;border-radius:20px;border:1px solid var(--border);background:var(--card2);color:var(--text);font-size:13px;cursor:pointer;transition:all .2s}
+.qbtn:hover,.qbtn.on{border-color:var(--pink);background:rgba(255,107,157,.15);color:var(--pink)}
+
+/* Section */
+.sec{max-width:1100px;margin:0 auto;padding:32px 20px}
+.sec-title{font-size:22px;font-weight:700;margin-bottom:6px}
+.sec-desc{color:var(--dim);font-size:14px;margin-bottom:18px}
+
+/* Character Detail Card */
+.detail-panel{display:none;background:var(--card);border-radius:var(--r);border:1px solid var(--border);padding:28px;margin-bottom:24px}
+.detail-panel.show{display:block}
+.detail-top{display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start}
+.detail-avatar{width:80px;height:80px;border-radius:var(--r2);background:linear-gradient(135deg,#2a1a3a,#1a2a3a);display:flex;align-items:center;justify-content:center;font-size:44px}
+.detail-info h2{font-size:24px;margin-bottom:2px}
+.detail-info .jp{color:var(--dim);font-size:13px;margin-bottom:8px}
+.detail-info .tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{padding:3px 12px;border-radius:14px;background:rgba(255,107,157,.12);color:var(--pink);font-size:12px}
+/* Stat Bars */
+.stat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:20px}
+.stat-item{text-align:center}
+.stat-item .bar-wrap{height:120px;background:var(--bg);border-radius:var(--r2);position:relative;overflow:hidden;margin-bottom:6px}
+.stat-item .bar-fill{position:absolute;bottom:0;left:0;right:0;border-radius:var(--r2);transition:height .4s}
+.bar-fill.spd{background:var(--pink)} .bar-fill.sta{background:#6bc5ff}
+.bar-fill.pow{background:#ffb86b} .bar-fill.gut{background:#c56bff}
+.bar-fill.wis{background:#6bff9d}
+.stat-item .s-label{font-size:11px;color:var(--dim)} .stat-item .s-val{font-size:15px;font-weight:700}
+/* Build Table */
+.build-table{width:100%;margin-top:20px;border-collapse:collapse}
+.build-table th{text-align:left;padding:10px 14px;background:var(--card2);border-bottom:2px solid var(--border);font-size:13px;color:var(--dim);font-weight:600}
+.build-table td{padding:12px 14px;border-bottom:1px solid var(--border);font-size:13px}
+
+/* Tier Table */
+.tier-table{width:100%;border-collapse:collapse;background:var(--card);border-radius:var(--r);overflow:hidden;border:1px solid var(--border)}
+.tier-table th{text-align:left;padding:12px 16px;background:var(--card2);border-bottom:2px solid var(--border);font-size:13px;color:var(--dim)}
+.tier-table td{padding:12px 16px;border-bottom:1px solid var(--border);font-size:13px}
+.tier-table tr:last-child td{border-bottom:none}
+.t-badge{display:inline-block;width:32px;height:32px;line-height:32px;text-align:center;border-radius:6px;font-weight:800;font-size:13px;color:#fff}
+.t-ss{background:var(--ss)} .t-s{background:var(--s)} .t-a{background:var(--a);color:#333} .t-b{background:var(--b)}
+
+/* 快速入口卡片 */
+.card-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-bottom:28px}
+.q-card{padding:20px;background:var(--card);border-radius:var(--r);border:1px solid var(--border);cursor:pointer;transition:all .2s}
+.q-card:hover{transform:translateY(-3px);border-color:var(--pink);box-shadow:0 6px 24px rgba(255,107,157,.15)}
+.q-card .qc-icon{font-size:32px;margin-bottom:8px}
+.q-card h4{font-size:15px;margin-bottom:4px}
+.q-card p{font-size:12px;color:var(--dim)}
+
+/* Footer */
+.ft{text-align:center;padding:32px;color:var(--dim);font-size:13px;border-top:1px solid var(--border);margin-top:40px}
+
+@media(max-width:640px){
+  .hero h1{font-size:24px}
+  .stat-grid{grid-template-columns:repeat(3,1fr)}
+  .detail-top{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-in">
+    <div class="logo">🐎 Uma<span>Trainer</span></div>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="输入赛马娘名字，如 特别周、无声铃鹿、帝王...">
+      <span class="s-icon" onclick="doSearch()">🔍</span>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <h1>赛马娘育成配卡，一站搞定</h1>
+  <p>选一匹马 → 看推荐支援卡 + 因子 + 训练策略 → 省去3小时试错</p>
+  <div class="quick-btns" id="quickBtns"></div>
+</section>
+
+<!-- 详情面板 -->
+<div class="sec" id="detailPanel" style="display:none">
+  <div class="detail-panel show" id="detailContent"></div>
+</div>
+
+<!-- 支援卡 Tier -->
+<section class="sec">
+  <div class="sec-title">📊 支援卡 Tier 排行</div>
+  <div class="sec-desc">当前版本 SSR 支援卡强度评估（综合育成泛用性 + 大赛表现）</div>
+  <div style="overflow-x:auto">
+    <table class="tier-table" id="tierTableBody"></table>
+  </div>
+</section>
+
+<!-- 快捷入口 -->
+<section class="sec">
+  <div class="sec-title">🔧 实用工具</div>
+  <div class="card-row">
+    <div class="q-card" onclick="scrollToTop()">
+      <div class="qc-icon">🔍</div>
+      <h4>角色育成查询</h4>
+      <p>搜索任意赛马娘，查看配卡/因子/训练策略</p>
+    </div>
+    <div class="q-card">
+      <div class="qc-icon">📅</div>
+      <h4>赛事与卡池日历</h4>
+      <p>即将到来的大赛、传奇赛、卡池活动</p>
+    </div>
+    <div class="q-card">
+      <div class="qc-icon">🧬</div>
+      <h4>因子继承模拟</h4>
+      <p>规划因子继承路线（开发中）</p>
+    </div>
+    <div class="q-card">
+      <div class="qc-icon">⚡</div>
+      <h4>技能图鉴</h4>
+      <p>全部技能效果与触发条件速查（开发中）</p>
+    </div>
+  </div>
+</section>
+
+<footer class="ft">
+  <p>UmaTrainer — 赛马娘 Pretty Derby 中文育成攻略 · 非官方玩家社区项目</p>
+  <p style="margin-top:4px">数据参考：GameWith / Kamigame / NGA社区 | 与Cygames无关联</p>
+</footer>
+
+<script>
+// ====== 数据层 ======
+const DB = {
+  uma: [
+    {
+      id:"spe", name:"特别周", jp:"スペシャルウィーク", icon:"🐎",
+      rarity:"★★★", style:"先行", dist:"中~长",
+      stats:{speed:90,stamina:80,power:82,guts:78,wisdom:76},
+      builds:[
+        {role:"泛用育成",cards:"キタサンSSR + スズカSSR + ブルボンSSR + ゴルシSSR + ラモーヌSSR + 友人マック",inherit:"速度9 + 耐力3",desc:"通用配卡，URA/青春杯通用，实战稳定UF+",tier:"S"},
+        {role:"长距离特化",cards:"キタサンSSR + ブルボンSSR + サトノSSR + ゴルシSSR + ラモーヌSSR + 友人マック",inherit:"耐力9 + 速度6",desc:"天皇赏春/长距离大赛向，耐力拉满",tier:"A+"}
+      ]
+    },
+    {
+      id:"suzuka", name:"无声铃鹿", jp:"サイレンススズカ", icon:"💨",
+      rarity:"★★★", style:"逃げ", dist:"中",
+      stats:{speed:98,stamina:70,power:78,guts:85,wisdom:82},
+      builds:[
+        {role:"逃马最优",cards:"キタサンSSR + スズカSSR + モーヌSSR + ラモーヌSSR + スイープSSR + 友人",inherit:"速度9 + 耐力6",desc:"逃马天花板配卡，中距离大赛T0",tier:"SS"},
+        {role:"英里逃马",cards:"キタサンSSR + スズカSSR + マックSSR + ラモーヌSSR + 友人 + 根性",inherit:"速度9 + 力量3",desc:"英里赛特化，速度+力量双拉",tier:"S"}
+      ]
+    },
+    {
+      id:"teio", name:"东海帝王", jp:"トウカイテイオー", icon:"👑",
+      rarity:"★★★", style:"先行/差し", dist:"中",
+      stats:{speed:93,stamina:78,power:85,guts:90,wisdom:80},
+      builds:[
+        {role:"中距离先行",cards:"キタサンSSR + スズカSSR + ラモーヌSSR + ゴルシSSR + スイープSSR + 友人",inherit:"速度9 + 力量6",desc:"帝王固有+先行战术，中距离胜率极高",tier:"S"},
+        {role:"差し流",cards:"キタサンSSR + ラモーヌSSR + ゴルシSSR + スイープSSR + ネイチャSSR + 友人",inherit:"力量9 + 根性6",desc:"差し跑法特化，追越爆发力强",tier:"A+"}
+      ]
+    },
+    {
+      id:"oguri", name:"小栗帽", jp:"オグリキャップ", icon:"🏃",
+      rarity:"★★★", style:"差し/追込", dist:"中~长",
+      stats:{speed:86,stamina:80,power:96,guts:84,wisdom:76},
+      builds:[
+        {role:"追込力量型",cards:"キタサンSSR + ラモーヌSSR + ゴルシSSR + ネイチャSSR + マックSSR + 友人",inherit:"力量9 + 根性6",desc:"追込核心卡，终盘爆发毁灭级",tier:"S"},
+        {role:"差し泛用",cards:"キタサンSSR + ラモーヌSSR + スイープSSR + ゴルシSSR + スペSSR + 友人",inherit:"速度6 + 力量9",desc:"差し跑法，中距离泛用",tier:"A+"}
+      ]
+    },
+    {
+      id:"mcqueen", name:"目白麦昆", jp:"メジロマックイーン", icon:"🏔️",
+      rarity:"★★★", style:"先行", dist:"长",
+      stats:{speed:80,stamina:97,power:80,guts:86,wisdom:84},
+      builds:[
+        {role:"长距离之王",cards:"ブルボンSSR + サトノSSR + キタサンSSR + ゴルシSSR + ラモーヌSSR + 友人",inherit:"耐力9 + 根性6",desc:"长距离专用配卡，天皇赏春/有马纪念T0",tier:"SS"},
+        {role:"耐力先行",cards:"キタサンSSR + ブルボンSSR + サトノSSR + ラモーヌSSR + マックSSR + 友人",inherit:"耐力9 + 速度6",desc:"先行长距离，稳扎稳打",tier:"S"}
+      ]
+    },
+    {
+      id:"gold", name:"黄金船", jp:"ゴールドシップ", icon:"🏴‍☠️",
+      rarity:"★★★", style:"追込", dist:"中~长",
+      stats:{speed:84,stamina:78,power:84,guts:98,wisdom:72},
+      builds:[
+        {role:"追込根性流",cards:"ゴルシSSR + ラモーヌSSR + ネイチャSSR + キタサンSSR + スイープSSR + 友人",inherit:"根性9 + 力量6",desc:"根性追込特化，后半程几乎不掉速",tier:"S"},
+        {role:"长距离追込",cards:"ゴルシSSR + ブルボンSSR + サトノSSR + ラモーヌSSR + ネイチャSSR + 友人",inherit:"耐力6 + 根性9",desc:"长距离追込，耐力保障+根性爆发",tier:"A+"}
+      ]
+    },
+    {
+      id:"daiwa", name:"大和赤骥", jp:"ダイワスカーレット", icon:"🔥",
+      rarity:"★★★", style:"逃げ/先行", dist:"中",
+      stats:{speed:94,stamina:80,power:86,guts:84,wisdom:78},
+      builds:[
+        {role:"中距离逃先",cards:"キタサンSSR + スズカSSR + ラモーヌSSR + スイープSSR + 友人 + 根性SSR",inherit:"速度9 + 力量6",desc:"逃先双修，固有技能稳定触发",tier:"S"}
+      ]
+    },
+    {
+      id:"grass", name:"草上飞", jp:"グラスワンダー", icon:"🌿",
+      rarity:"★★★", style:"差し", dist:"中",
+      stats:{speed:86,stamina:78,power:93,guts:85,wisdom:83},
+      builds:[
+        {role:"差し爆发流",cards:"キタサンSSR + ラモーヌSSR + ゴルシSSR + ネイチャSSR + スイープSSR + 友人",inherit:"力量9 + 速度6",desc:"差し战术，终盘加速爆炸",tier:"S"}
+      ]
+    },
+    {
+      id:"condor", name:"神鹰", jp:"エルコンドルパサー", icon:"🦅",
+      rarity:"★★★", style:"先行/差し", dist:"中",
+      stats:{speed:84,stamina:82,power:80,guts:82,wisdom:95},
+      builds:[
+        {role:"智力先行",cards:"スイープSSR + キタサンSSR + ラモーヌSSR + ゴルシSSR + ネイチャSSR + 友人",inherit:"智力6 + 速度9",desc:"智力核心，技能发动率极高",tier:"A+"}
+      ]
+    },
+    {
+      id:"rice", name:"米浴", jp:"ライスシャワー", icon:"🌹",
+      rarity:"★★", style:"先行", dist:"长",
+      stats:{speed:76,stamina:92,power:74,guts:88,wisdom:80},
+      builds:[
+        {role:"长距离耐力",cards:"ブルボンSSR + サトノSSR + キタサンSSR + ゴルシSSR + ラモーヌSSR + 友人",inherit:"耐力9 + 根性6",desc:"长距离耐力特化，菊花赏/天皇赏春向",tier:"A"}
+      ]
+    }
+  ],
+  tier: [
+    {t:"SS",name:"キタサンブラック SSR",type:"速度",skill:"弧線のプロフェッサー",comment:"弯道加速，全场景泛用第一"},
+    {t:"SS",name:"サイレンススズカ SSR",type:"速度",skill:"逃げコーナー◎",comment:"逃马核心，弯道性能顶级"},
+    {t:"S",name:"ミホノブルボン SSR",type:"耐力",skill:"鋼の意志",comment:"长距离耐力卡天花板"},
+    {t:"S",name:"ゴールドシップ SSR",type:"根性",skill:"不屈の心",comment:"差し/追込泛用根性卡"},
+    {t:"S",name:"メジロラモーヌ SSR",type:"力量",skill:"パワーボム",comment:"力量卡首选，中距离必备"},
+    {t:"A",name:"スイープトウショウ SSR",type:"智力",skill:"クールダウン",comment:"智力核心卡，技能发动率大幅提升"},
+    {t:"A",name:"ナイスネイチャ SSR",type:"根性",skill:"差しの極意",comment:"差し战术专用根性卡"},
+    {t:"A",name:"サトノダイヤモンド SSR",type:"耐力",skill:"長距離の星",comment:"长距离耐力补强"},
+    {t:"B",name:"スペシャルウィーク SSR",type:"速度",skill:"末脚",comment:"新手友好，终盘加速入门卡"},
+    {t:"B",name:"駿川たづな SSR",type:"友人",skill:"お出かけ",comment:"友人卡，体力管理+事件回复"}
+  ]
+};
+
+// ====== 渲染快速入口按钮 ======
+function renderQuickBtns(){
+  document.getElementById('quickBtns').innerHTML = DB.uma.map(u =>
+    `<button class="qbtn" onclick="showDetail('${u.id}')">${u.icon} ${u.name}</button>`
+  ).join('');
+}
+
+// ====== 渲染详情面板 ======
+function showDetail(id){
+  const u = DB.uma.find(x=>x.id===id);
+  if(!u) return;
+  const panel = document.getElementById('detailPanel');
+  panel.style.display='block';
+
+  const maxStat = Math.max(u.stats.speed,u.stats.stamina,u.stats.power,u.stats.guts,u.stats.wisdom);
+
+  document.getElementById('detailContent').innerHTML = `
+    <div class="detail-top">
+      <div class="detail-avatar">${u.icon}</div>
+      <div class="detail-info">
+        <h2>${u.name} <span style="color:var(--gold);font-size:16px">${u.rarity}</span></h2>
+        <div class="jp">${u.jp}</div>
+        <div class="tags">
+          <span class="tag">${u.style}</span>
+          <span class="tag">${u.dist}</span>
+        </div>
+      </div>
+    </div>
+    <div class="stat-grid">
+      ${['speed','stamina','power','guts','wisdom'].map(k=>{
+        const labels={speed:'速度',stamina:'耐力',power:'力量',guts:'根性',wisdom:'智力'};
+        const cls={speed:'spd',stamina:'sta',power:'pow',guts:'gut',wisdom:'wis'};
+        return `<div class="stat-item">
+          <div class="bar-wrap"><div class="bar-fill ${cls[k]}" style="height:${u.stats[k]}%"></div></div>
+          <div class="s-val">${u.stats[k]}</div>
+          <div class="s-label">${labels[k]}</div>
+        </div>`;
+      }).join('')}
+    </div>
+    <table class="build-table" style="margin-top:24px">
+      <thead><tr><th>方案</th><th>推荐支援卡</th><th>因子继承</th><th>说明</th><th>Tier</th></tr></thead>
+      <tbody>${u.builds.map(b=>`
+        <tr>
+          <td><strong>${b.role}</strong></td>
+          <td style="font-size:12px">${b.cards}</td>
+          <td>${b.inherit}</td>
+          <td style="color:var(--dim);font-size:12px">${b.desc}</td>
+          <td><span class="t-badge t-${b.tier === 'SS' ? 'ss' : b.tier === 'S' ? 's' : b.tier === 'A+' ? 'a' : 'b'}">${b.tier}</span></td>
+        </tr>
+      `).join('')}</tbody>
+    </table>
+  `;
+  panel.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+// ====== 渲染 Tier 表 ======
+function renderTier(){
+  document.getElementById('tierTableBody').innerHTML = `
+    <thead><tr><th></th><th>支援卡</th><th>类型</th><th>核心技能</th><th>评价</th></tr></thead>
+    <tbody>${DB.tier.map(c=>`
+      <tr>
+        <td><span class="t-badge t-${c.t==='SS'?'ss':c.t==='S'?'s':c.t==='A'?'a':'b'}">${c.t}</span></td>
+        <td><strong>${c.name}</strong></td>
+        <td>${c.type}</td>
+        <td>${c.skill}</td>
+        <td style="color:var(--dim)">${c.comment}</td>
+      </tr>
+    `).join('')}</tbody>
+  `;
+}
+
+// ====== 搜索 ======
+function doSearch(){
+  const q = document.getElementById('searchInput').value.trim().toLowerCase();
+  if(!q) return;
+  const found = DB.uma.find(u=>
+    u.name.includes(q) || u.jp.toLowerCase().includes(q) ||
+    u.style.includes(q) || u.dist.includes(q)
+  );
+  if(found) showDetail(found.id);
+  else alert('未找到相关赛马娘，试试"特别周""帝王""麦昆"等关键词');
+}
+
+document.getElementById('searchInput').addEventListener('keydown',e=>{if(e.key==='Enter')doSearch();});
+
+function scrollToTop(){window.scrollTo({top:0,behavior:'smooth'});}
+
+// ====== 初始化 ======
+renderQuickBtns();
+renderTier();
+</script>
+
+</body>
+</html>
